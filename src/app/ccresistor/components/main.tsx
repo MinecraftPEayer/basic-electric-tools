@@ -5,7 +5,7 @@ import cookies from 'js-cookies';
 import ArrowForward from '@/assets/icons/svg/arrow_forward.svg'
 import Close from '@/assets/icons/svg/close.svg'
 import Refresh from '@/assets/icons/svg/refresh.svg'
-import GitHubIcon from '@/assets/icons/github.png'
+import GitHubIcon from '@/assets/icons/svg/github.svg'
 import '@/app/globals.css';
 import { useEffect, useState } from 'react';
 import Image from 'next/image'
@@ -187,10 +187,10 @@ const Main = () => {
     }, [resistor])
 
     return (
-        <div className={`${localFont.className} bg-[#e3b235] w-full h-screen`}>
+        <div className={`${localFont.className} bg-[#120D00] w-full h-screen`}>
             <div className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2'>
                 <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 p-5 w-[27.5rem] bg-[#ffb700] rounded-xl z-20 transition duration-300 ${detailOpen ? '-translate-x-[80%]' : ''}`}>
-                    <div className='bg-[#ffd737] h-16 w-80 rounded-full flex z-20 relative left-10'>
+                    <div className='bg-[#ffd737] h-16 w-80 rounded-full flex z-20 mt-10 relative left-10'>
                         <div className={`h-16 w-5 ${resistorColor[0]} ml-8 hover:h-[calc(100%+2rem)] transition-all hover:-translate-y-4 [&:hover>:nth-child(1)]:opacity-100 relative`}>
                             <p className={`absolute top-4 opacity-0 text-xl/[64px] transition ${resistor[0] === 4 || resistor[0] === 5 || resistor[0] === 9 ? 'text-black' : ''}`}>{resistorValue[0]}</p>
                         </div>
@@ -204,7 +204,7 @@ const Main = () => {
                             <p className='absolute top-4 opacity-0 text-xl/[64px] transition'>金</p>
                         </div>
                     </div>
-                    <div className='absolute top-12 h-2 bg-resistor-wire z-10 w-[25rem]'></div>
+                    <div className='mt-10 absolute top-12 h-2 bg-resistor-wire z-10 w-[25rem]'></div>
 
                     <div className='mt-10 relative'>
                         <input type='text' id='answerInput' className='w-full h-16 bg-[#efad34] rounded-full text-xl font-bold pl-8 placeholder-black absolute' placeholder='輸入你的答案...' onChange={(e) => {
@@ -227,7 +227,7 @@ const Main = () => {
                             setResistor(generateResistor())
                         }} />
                         <div className='p-5 pt-20'>
-                            <p className='text-black'>你已經回答了 <b className='text-gray-700'>{cookies.getItem('questions') ?? 0}</b> 題題目</p>
+                            <p className='text-black'>你已經回答了 <b className='text-black'>{cookies.getItem('questions') ?? 0}</b> 題題目</p>
                             <div className='flex mt-2'>
                                 <div className='mr-10'>
                                     <p className='text-gray-500'>正確/錯誤</p>
@@ -241,7 +241,7 @@ const Main = () => {
                         </div>
                     </div>
                 </div>
-                <div className={`w-[27.5rem] h-[22.5rem] ${correct ? 'bg-green-400' : 'bg-red-400'} rounded-xl z-10 transition-transform duration-300 ${detailOpen ? 'translate-x-[20%]' : ''}`}>
+                <div className={`w-[27.5rem] h-[22.5rem] ${correct ? 'bg-[#0FB900]' : 'bg-[#B90600]'} rounded-xl z-10 transition-transform duration-300 ${detailOpen ? 'translate-x-[20%]' : ''}`}>
                     <div className="ml-52 px-5 flex">
                         <p className='text-xl/10'>{correct ? '正確!' : '錯誤!'}</p>
                         <Close className="absolute right-1 top-1 w-8 h-8" onClick={(e: any) => {
@@ -251,7 +251,7 @@ const Main = () => {
                             setResistor(generateResistor())
                         }} />
                     </div>
-                    <div className='absolute top-10 bottom-5 rounded-xl h-[calc(100%-60px)] w-[14.5rem] bg-[#ffc861] ml-52 py-3 pl-5 pr-2'>
+                    <div className='absolute top-10 bottom-5 rounded-xl h-[calc(100%-60px)] w-[14.5rem] bg-[#EDAA00] ml-52 py-3 pl-5 pr-2'>
                         <div className={`${detailOpen ? 'opacity-100' : 'opacity-0'}`}>
                             <p className='text-gray-600 text-xl/5'>正確答案:</p>
                             <p className={`${(((resistor[0] * 10) + resistor[1]) * (10 ** resistor[2]) >= 100000000) || (((resistor[0] * 10) + resistor[1]) * (10 ** resistor[2])) ? 'text-3xl' : 'text-4xl'} text-gray-700 overflow-hidden`}>{parseFloat((((resistor[0] * 10) + resistor[1]) * (10 ** resistor[2])).toFixed(2))}</p>
@@ -261,10 +261,10 @@ const Main = () => {
                         </div>
                     </div>
                 </div>
-                <div className='absolute h-16 w-[27.5rem]'>
-                    <a href='https://github.com/MinecraftPEayer/basic-electric-tools' className='absolute flex my-2 h-[48px] left-1/2 -translate-x-1/2'>
-                        <Image src={GitHubIcon} width={48} height={48} alt='GitHub'/>
-                        <p className='text-xl/[48px] ml-2 text-gray-600'><b>檢視原始碼</b></p>
+                <div className='mt-5 absolute h-16 w-[27.5rem]'>
+                    <a href='https://github.com/MinecraftPEayer/basic-electric-tools' className='absolute flex  my-2 h-[48px] left-1/2 -translate-x-1/2'>
+                        <GitHubIcon className={'fill-white'} width={48} height={48} alt='GitHub'/>
+                        <p className='text-xl/[48px] ml-2 text-white'><b>檢視原始碼</b></p>
                     </a>
                 </div>
             </div>
