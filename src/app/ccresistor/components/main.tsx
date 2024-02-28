@@ -261,11 +261,12 @@ const Main = () => {
                         </div>
                     </div>
                 </div>
-                <div className='absolute h-16 w-[27.5rem]'>
-                    <a href='https://github.com/MinecraftPEayer/basic-electric-tools' className='absolute flex my-2 h-[48px] left-1/2 -translate-x-1/2'>
-                        <Image src={GitHubIcon} width={48} height={48} alt='GitHub'/>
-                        <p className='text-xl/[48px] ml-2 text-gray-600'><b>檢視原始碼</b></p>
+                <div className='absolute h-[48px] w-[27.5rem]'>
+                    <a href='https://github.com/MinecraftPEayer/basic-electric-tools' className='absolute flex my-2 h-[32px] left-1/2 -translate-x-1/2'>
+                        <Image src={GitHubIcon} width={32} height={32} alt='GitHub'/>
+                        <p className='text-xl/[32px] ml-2 text-gray-600'><b>檢視原始碼</b></p>
                     </a>
+                    <p className='absolute flex my-2 h-[32px] left-1/2 -translate-x-1/2 mt-[48px] text-gray-700'><b>如有BUG/建議歡迎回報</b></p>
                 </div>
             </div>
         </div>
