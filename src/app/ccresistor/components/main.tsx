@@ -254,7 +254,7 @@ const Main = () => {
                     <div className='absolute top-10 bottom-5 rounded-xl h-[calc(100%-60px)] w-[14.5rem] bg-[#ffc861] ml-52 py-3 pl-5 pr-2'>
                         <div className={`${detailOpen ? 'opacity-100' : 'opacity-0'}`}>
                             <p className='text-gray-600 text-xl/5'>正確答案:</p>
-                            <p className={`${(((resistor[0] * 10) + resistor[1]) * (10 ** resistor[2]) >= 100000000) || (((resistor[0] * 10) + resistor[1]) * (10 ** resistor[2])) ? 'text-3xl' : 'text-4xl'} text-gray-700 overflow-hidden`}>{parseFloat((((resistor[0] * 10) + resistor[1]) * (10 ** resistor[2])).toFixed(2))}</p>
+                            <p className={`${(((resistor[0] * 10) + resistor[1]) * (10 ** resistor[2]) >= 100000000) || (((resistor[0] * 10) + resistor[1]) * (10 ** resistor[2])) ? 'text-3xl' : 'text-4xl'} text-gray-700 overflow-hidden`}>{parseFloat((((resistor[0] * 10) + resistor[1]) * (10 ** resistor[2])).toFixed(2))} <b className='text-gray-600'>Ω</b></p>
 
                             <p className='text-gray-600 text-xl/5 mt-5'>算式:</p>
                             <p className='text-2xl text-gray-700'>({resistor[0]} * 10 + {resistor[1]}) * 10^{resistor[2]}</p>
