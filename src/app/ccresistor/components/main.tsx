@@ -266,7 +266,7 @@ const Main = () => {
                         <GitHubIcon className={'fill-white'} width={48} height={48} alt='GitHub'/>
                         <p className='text-xl/[48px] ml-2 text-white'><b>檢視原始碼</b></p>
                     </a>
-                    <p className='absolute flex my-2 h-[32px] left-1/2 -translate-x-1/2 mt-[56px] text-gray-700'><b>如有BUG/建議歡迎回報</b></p>
+                    <p className='absolute flex my-2 h-[32px] left-1/2 -translate-x-1/2 mt-[56px] text-gray-300'><b>如有BUG/建議歡迎回報</b></p>
                 </div>
             </div>
         </div>
